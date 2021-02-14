@@ -1,5 +1,5 @@
 code -> packages -> modules
-
+1. Greeting and Hello Module
 go mod init {   }
 - 다른 code에서 사용될 module임을 명시하는 go.mod 만들기
 - {  }에는 module의 경로를 넣는다. 
@@ -41,3 +41,11 @@ replace는 아직 publish 되지 않은 모듈을 찾게 해준다.
 이미 publish된 모듈을 사용한다면 replace대신 require을 사용하면 된다.
 [go.mod]
 	require example.com/greetings v1.1.0
+-----------------------------------------------------
+2. Error handling
+GO함수에서는 여러값을 반환할 수 있다.
+nil은 에러가 없다는 뜻이다. 
+
+log 패키지를 import하여 prefix와 flag 설정가능 
+prefix는 log 메세지의 시작을 미리 설정해준다. 
+log.Fatal(err) 함수로 에러 메세지를 출력할 수 있다. 
