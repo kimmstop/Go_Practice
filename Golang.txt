@@ -3,7 +3,8 @@ code -> packages -> modules
 go mod init {   }
 - 다른 code에서 사용될 module임을 명시하는 go.mod 만들기
 - {  }에는 module의 경로를 넣는다. 
-- 작성한 code가 지원하는 GO 버전과 dependancy들을 명시
+- 이 경로는 다른 패키지에서 해당 패키지를 import할때 주소로 사용된다. 
+- 작성한 code가 지원하는 GO 버전과 dependency들을 명시
 
 func 함수이름 (파라미터이름 파라미터타입) 함수반환형{
 
@@ -18,3 +19,25 @@ GO언어에서는 대문자로 시작하는 함수는 다른 패키지에서 호
 message := fmt.Sprintf("HI, %v, Welcome", name)
 - var message string
 - message = fmt.Sprintf("HI, %v, Welcome", name)
+
+caller moudule이 callee module을 찾기 위해서 caller module의 go.mod 파일을
+수정해야 한다. caller go파일에서 import { } 부분에서 { }부분을 
+실제 callee module이 있는 경로로 go.mod의 내용을 수정해야한다. 
+[go.mod]
+	replace example.com/greetings => ../greetings
+
+
+$ go build
+
+[go.mod]
+	replace example.com/greetings => ../greetings
+
+	require example.com/greetings v0.0.0-00010101000000-000000000000
+	ㄴ 이 모듈이 require ~~ 에 dependency가 있다는 뜻이다.
+	
+
+	
+replace는 아직 publish 되지 않은 모듈을 찾게 해준다.
+이미 publish된 모듈을 사용한다면 replace대신 require을 사용하면 된다.
+[go.mod]
+	require example.com/greetings v1.1.0
