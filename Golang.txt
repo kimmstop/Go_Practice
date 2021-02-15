@@ -55,11 +55,17 @@ log.Fatal(err) 함수로 에러 메세지를 출력할 수 있다.
 
 slice - 배열과 비슷하나 사이즈가 동적으로 변함 -> vector와 비슷한듯
 rand.Intn(n int) int - 0초과 ~ n 이하의 랜덤한 양의 정수를 반환
+-----------------------------------------------------------
+4. Return greetings for multiple people
+ map은 make(map[키 타입]value타입) 으로 선언한다. 
 
 
-
-
-
+blank identifier "_" - NULL과 비슷하다. 
+	for loop에서의 사용 : multiple assignment 상황에서 
+	사용하지 않는 값을 _로 하여 불필요한 dummy 값으로 만드는 것을 피함
+	하지만 error를 _로 지정하는 것은 안된다.
+	
+	사용하지는 않지만 중요한 변수를 _로 사용
 
 
 
