@@ -49,3 +49,20 @@ nil은 에러가 없다는 뜻이다.
 log 패키지를 import하여 prefix와 flag 설정가능 
 prefix는 log 메세지의 시작을 미리 설정해준다. 
 log.Fatal(err) 함수로 에러 메세지를 출력할 수 있다. 
+
+----------------------------------------------------------
+3. Return a random greeting
+
+slice - 배열과 비슷하나 사이즈가 동적으로 변함 -> vector와 비슷한듯
+rand.Intn(n int) int - 0초과 ~ n 이하의 랜덤한 양의 정수를 반환
+
+
+
+
+
+
+
+
+
+
+
